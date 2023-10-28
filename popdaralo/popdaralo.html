@@ -13,8 +13,8 @@
     <h1>Popdaráló</h1>
     <nav style="display: flex; flex-direction: row;">
         <button onclick="loadTable()" id="loadTable" class="btn btn-primary">Tábla betöltése</button>
-        <button onclick="addPlayer" disabled id="addPlayerBtn" class="btn btn-primary">Játékos hozzáadása</button>
-        <button onclick="updateGameView" disabled class="btn btn-primary">Frissítés</button>
+        <button onclick="addPlayer()" disabled id="addPlayerBtn" class="btn btn-primary">Játékos hozzáadása</button>
+        <button onclick="updateGameView()" class="btn btn-primary">Frissítés</button>
     </nav>
     <div id="gameContent" style="display: block;">
         <div style="display: grid; grid-template-columns: 3fr 1fr;" id="mainView">
@@ -58,9 +58,9 @@
 
         function loadTable() {
             let fileName = prompt('Fájlnév:');
-            $.getJSON(fileName, (json) => {
-                console.log(json);
-                currentGame = json;
+            $.getJSON(fileName, (data) => {
+                console.log(data);
+                currentGame = data;
                 console.log(currentGame);
 
                 updateGameView();
