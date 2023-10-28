@@ -58,8 +58,10 @@
         function loadTable() {
             let fileName = prompt('Fájlnév:');
             $.getJSON(fileName, (json) => {
-                currentGame = json
-                updateGameView()
+                currentGame = json;
+                console.log(currentGame);
+
+                updateGameView();
             })
         }
 
