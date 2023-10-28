@@ -49,6 +49,7 @@
         })
 
         function updateGameView() {
+            console.log('updateGameView');
             const currentSong = currentGame.songs[1]
 
             $('#questionTitle').html(`${currentSong.performer} - ${currentSong.title} - ${currentSong.year}`)
@@ -58,6 +59,7 @@
         function loadTable() {
             let fileName = prompt('Fájlnév:');
             $.getJSON(fileName, (json) => {
+                console.log(json);
                 currentGame = json;
                 console.log(currentGame);
 
